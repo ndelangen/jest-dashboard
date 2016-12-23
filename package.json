@@ -13,6 +13,8 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "jest-cli": "^18.0.0",
-    "jest-observer": "file:../jest-observer/"
+    "jest-observer": "file:../jest-observer/",
+    "pty.js": "^0.3.1",
+    "term.js": "0.0.7"
   }
 }
