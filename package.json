@@ -1,0 +1,18 @@
+{
+  "name": "jest-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -c ./demo/.jestrc",
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "jest-cli": "^18.0.0",
+    "jest-observer": "file:../jest-observer/"
+  }
+}
