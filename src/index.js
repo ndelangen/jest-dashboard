@@ -58,14 +58,18 @@ screen.append(debug);
 body.pty.write('cd ' + cwd +'\r');
 body.pty.write('npm run test -- --watch\r');
 // debug.insertBottom(body.screenshot([0,10,0,10]));
-//
-body.pty.on('data', function(data) {
+
+// body.pty.on('data', function(data) {
   // debug.insertBottom('data!: ' + data);
   // debug.insertBottom('screenshot!: ' + body.screenshot([0,10,0,10]));
-});
+// });
 
 screen.key(['escape', 'q', 'C-c'], function(ch, key) {
   return process.exit(0);
+});
+
+screen.key(['a', 'o'], function(ch, key) {
+  body.pty.write(ch);
 });
 
 function topOutput(text) { statusbar.setContent(text);}
