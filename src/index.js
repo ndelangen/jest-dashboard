@@ -4,6 +4,10 @@ const path = require('path');
 
 const cwd = process.cwd();
 
+// process.stdout.columns,
+// process.stdout.rows,
+
+
 const screen = blessed.screen({
   terminal: 'xterm-256color',
   smartCSR: true,
@@ -24,15 +28,15 @@ const body = blessed.terminal({
   // args: ['-v'],
   top: 2,
   left: 0,
-  width: 80,
-  height: 80,
+  width: Math.floor(process.stdout.columns / 2),
+  height: process.stdout.rows - 2,
   scrollable: true
 });
 const debug = blessed.log({
-  top: 43,
-  left: 0,
-  width: '100%',
-  height: '50%',
+  top: 1,
+  left: Math.floor(process.stdout.columns / 2),
+  width: Math.ceil(process.stdout.columns / 2),
+  height: process.stdout.rows - 1,
   style: {
     fg: 'blue',
     bg: 'white'
